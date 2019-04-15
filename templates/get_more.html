@@ -1,0 +1,73 @@
+﻿{% extends "admin_base.html" %}
+
+{% block content %}
+<section class="padding-top-100 padding-bottom-100 pages-in chart-page">
+      <div class="container"> 
+      <form class="" method="post" action="#">
+        <!-- Payments Steps -->
+        <div class="shopping-cart text-center">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th class="h-25 col-md-7 col-xs-400 pull-left">Товар</th>
+                <th scope="col">Цена</th>
+                <th scope="col">К-во товара</th>
+                <th scope="col">На складе</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+
+                <tbody>
+		
+		
+		{% for item in Goods %}
+
+
+
+		
+              	<tr>
+                <th class="text-left"> <!-- Media Image --> 
+                  <iframe height="300%" width="100%" src={{item[2]}} frameborder="0" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';">
+</iframe>
+                 
+                  <!-- Item Name -->
+                  <div class="media-body">
+                    <span>{{item[1]}}</span>
+                    <p>{{item[4]}}</p>
+                  </div>
+                </th>
+                <td><span class="price"><small>$</small>{{item[5]}}</span></td>
+                <td>
+<div class="form-group">
+ <label for="count" class="cols-sm-2 control-label"></label>
+ <div class="cols-sm-10">
+ <div class="input-group">
+ <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+ <input type="number" min=0 class="form-control" name={{item[0]}} id={{item[0]}} value="0">
+ </div>
+ </div>
+ </div>
+
+
+
+		
+
+	
+                </td>
+    <td><span class="price"><small></small>{{item[3]}}</span></td>            
+                
+              </tr>
+		
+ 
+ </form>    
+{% endfor %}
+<td><button type="submit" class="btn btn-primary">Дозаказать на склад</button></td>
+
+            </tbody>
+		
+
+		
+              
+
+              
+{% endblock %}

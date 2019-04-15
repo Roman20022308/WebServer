@@ -1,0 +1,61 @@
+﻿{% extends "admin_base.html" %}
+
+{% block content %}
+<section class="padding-top-100 padding-bottom-100 pages-in chart-page">
+      <div class="container"> 
+<form class="" method="post" action="#">
+     
+        <!-- Payments Steps -->
+        <div class="shopping-cart text-center">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="text-left">Items</th>
+               
+                <th scope="col">Qty</th>
+              
+              </tr>
+            </thead>
+
+                <tbody>
+		
+		
+		{% for item in Goods %}
+
+
+
+		
+              	<tr>
+        
+                <td>
+
+<span class="price">{{item[0][1]}}</span>
+
+		
+
+	
+                </td>
+    <td><span class="price"><small></small>{{item[1]}}</span></td>            
+                
+              </tr>
+		
+
+  
+{% endfor %}
+</form>  
+{% if active%}
+<td><button type="submit" class="btn btn-primary">Одобрить</button></td>
+{% else %}
+<td><button type="submit" class="btn btn-primary" disabled>Одобрить</button></td>
+
+{% endif %}
+
+
+            </tbody>
+		
+
+		
+              
+
+              
+{% endblock %}

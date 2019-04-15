@@ -1,0 +1,59 @@
+﻿{% extends "admin_base.html" %}
+
+{% block content %}
+<section class="padding-top-100 padding-bottom-100 pages-in chart-page">
+      <div class="container"> 
+     
+        <!-- Payments Steps -->
+        <div class="shopping-cart text-center">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">id пользователя</th>
+                <th scope="col">Номер заказа</th>
+                <th scope="col">Стоимость заказа</th>
+              
+              </tr>
+            </thead>
+
+                <tbody>
+		
+		
+		{% for item in Orders_of_all_users %}
+
+
+
+		
+              	<tr>
+        
+                <td>
+
+<span class="price">{{item[1]}}</span>
+
+		
+
+	
+                </td>
+    <td><span class="price"><small></small>{{item[2]}}</span></td>            
+                <td>
+
+<span class="price">{{item[4]}}</span>
+
+		
+
+	
+                </td>
+              </tr>
+		
+ 
+  
+{% endfor %}
+
+            </tbody>
+		
+
+		
+              
+
+              
+{% endblock %}

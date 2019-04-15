@@ -1,0 +1,71 @@
+﻿{% extends "admin_base.html" %}
+
+{% block content %}
+<section class="padding-top-100 padding-bottom-100 pages-in chart-page">
+      <div class="container"> 
+      <form class="" method="post" action="#">
+        <!-- Payments Steps -->
+        <div class="shopping-cart text-center">
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="text-left">Items</th>
+                <th scope="col">Price</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Total</th>
+                <th scope="col">&nbsp;</th>
+              </tr>
+            </thead>
+
+                <tbody>
+		
+		
+		{% for item in Goods %}
+
+
+
+		
+              	<tr>
+                <th class="text-left"> <!-- Media Image --> 
+                  <a href="#." class="item-img"> <img class="media-object" src={{item[2]}} alt=""> </a> 
+                  <!-- Item Name -->
+                  <div class="media-body">
+                    <span>{{item[1]}}</span>
+                    <p>{{item[4]}}</p>
+                  </div>
+                </th>
+                <td><span class="price"><small>$</small>{{item[5]}}</span></td>
+                <td>
+<div class="form-group">
+ <label for="count" class="cols-sm-2 control-label">Password</label>
+ <div class="cols-sm-10">
+ <div class="input-group">
+ <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+ <input type="number" min=0 max={{item[3]}} class="form-control" name={{item[0]}} id={{item[0]}} value="0">
+ </div>
+ </div>
+ </div>
+
+
+
+		
+
+	
+                </td>
+    <td><span class="price"><small>на складе</small>{{item[3]}}</span></td>            
+                
+              </tr>
+		
+ 
+ </form>    
+{% endfor %}
+<td><button type="submit" class="btn btn-primary">Сделать заказ</button></td>
+
+            </tbody>
+		
+
+		
+              
+
+              
+{% endblock %}
